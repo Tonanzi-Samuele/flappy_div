@@ -1,0 +1,52 @@
+.cont-test{
+    display: inline-block;
+    
+}
+
+body{
+    background-color: violet;
+    margin: 0;
+}
+
+.container{
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.cielo{
+    background-color: aqua;
+    width: 500px;
+    height: 580px;
+    position: absolute;
+}
+
+.pavimento{
+    width: 500px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    top: 580px;
+}
+
+.flappy{
+    background-color: yellow;
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ostacolo{
+    
+    background-color: green;
+    width: 60px;
+    height: 300px;
+    position: absolute;
+}
