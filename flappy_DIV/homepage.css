@@ -1,6 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 body{
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200, 300, 400, 500;
     background-color: violet;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
+header{
+    display: flex;
+    height: 30vh;
+    width: 50vh;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+/*
+header > h1{
+    justify-content: center;
+} */
