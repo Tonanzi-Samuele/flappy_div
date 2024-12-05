@@ -9,7 +9,7 @@ body{
 }
 
 .container{
-    width: 500px;
+    width: 570px;
     height: 730px;
     position: absolute;
     display: inline-block;
@@ -18,17 +18,18 @@ body{
 
 .cielo{
     background-color: aqua;
-    width: 500px;
+    width: 570px;
     height: 580px;
     position: absolute;
 }
 
 .pavimento{
-    width: 500px;
+    width: 570px;
     height: 150px;
     background-color: black;
     position: absolute;
     top: 580px;
+    z-index: +1;
 }
 
 .flappy{
@@ -46,6 +47,14 @@ body{
 .ostacolo{
     
     background-color: green;
+    width: 60px;
+    height: 300px;
+    position: absolute; 
+}
+
+.ostacolosopra {
+    background-color: green;
+    transform: rotate(180deg);
     width: 60px;
     height: 300px;
     position: absolute;
