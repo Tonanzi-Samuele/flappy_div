@@ -64,15 +64,10 @@ function generaostacolo(){
 }
 generaostacolo();
 
-    function gameover(){
-        clearInterval(idTempoGioco)
-
-
 function gameover(){
     clearInterval(idTempoGioco)
     game_over == true;
     document.removeEventListener("keyup", control)
 }
-
 }
-})
+)
