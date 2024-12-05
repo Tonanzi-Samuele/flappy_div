@@ -1,11 +1,19 @@
+function addClass(obj, classe) {
+    return obj.classList.add(classe);
+}
+
+function create(element) {
+    return document.createElement(element);
+}
+
 function querySelector(obj) {
     return document.querySelector(obj);
 }
 
 document.addEventListener('DOMContentLoaded',() =>{
-const bird = document.querySelector(".flappy");
-const displayGioco = document.querySelector(".container");
-const ground = document.querySelector(".pavimento");
+const bird = querySelector(".flappy");
+const displayGioco = querySelector(".container");
+const ground = querySelector(".pavimento");
 
 let birdSx = 220;
 let birdBot = 100;
@@ -24,11 +32,11 @@ function generaostacolo(){
     let ostacoloSx = 500;
     let Altezza = Math.random() * 60;
     let ostacoloBot = Altezza;
-    const ostacolo = document.createElement("div");
-    const ostacolosopra = document.createElement("div");
+    const ostacolo = create("div");
+    const ostacolosopra = create("div");
     if (!game_over){
-        ostacolo.classList.add("ostacolo");
-        ostacolosopra.classList.add("ostacolosopra");
+        addClass(ostacolo, 'ostacolo');
+        addClass(ostacolosopra, 'ostacolosopra');
     }
     displayGioco.appendChild(ostacolo);
     displayGioco.appendChild(ostacolosopra);
