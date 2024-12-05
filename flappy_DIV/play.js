@@ -87,22 +87,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     birdBot > ostacoloBot + gap - 200
                 ) || birdBot === 0
             ) {
-                gameover();
+                gameover(timerId);
+                game_over = true;
                 clearInterval(timerId);
             }
         }
-        let timerId = setInterval(muoviostacolo, 20);
+        const timerId = setInterval(muoviostacolo, 20);
         //!game_over ? setTimeout(generaostacolo, 3000)
         if (!game_over)
             setTimeout(generaostacolo, 2700);
     }
     generaostacolo();
 
-    function gameover() {
+    function gameover(timerId) {
         // blocco di codice che stoppa flappy dal poter volare
         clearInterval(idTempoGioco);
+        clearInterval(timerId);
         game_over == true;
         document.removeEventListener("keyup", control);
+        console.log('game over.');
 
         addClass(ground, 'pavimento');
         removeClass(ground, 'ground-moving');
@@ -123,6 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
         replay.href = './game.html';
 
         gameOverText.id = 'gameOver-Text';
+
+        // displayGioco.style.backgroundColor = 'grey';
+        // displayGioco.style.display = 'flex';
+        // displayGioco.style.flexFlow = 'row wrap';
+        // displayGioco.style.justifyContent = 'center';
+        // displayGioco.style.alignItems = 'center';
+
         buttons.append(homeButton, replay);
         divGameOver.after(gameOverText, buttons);
     }
