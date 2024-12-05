@@ -1,8 +1,12 @@
+function querySelector(obj) {
+    return document.querySelector(obj);
+}
+
 document.addEventListener('DOMContentLoaded',() =>{
     let inter = 0;
-    const bird = document.querySelector(".flappy");
-    const displayGioco = document.querySelector(".container");
-    const ground = document.querySelector(".pavimento");
+    const bird = querySelector(".flappy");
+    const displayGioco = querySelector(".container");
+    const ground = querySelector(".pavimento");
 
     let birdSx = 220;
     let birdBot = 100;
@@ -21,10 +25,12 @@ document.addEventListener('DOMContentLoaded',() =>{
             salto()
         }
     }
+
     function salto(){
         if(birdBot < 500) birdBot += 50
         bird.style.bottom = birdBot + "px";
     }
+
     document.addEventListener("keyup", control);
 
     function generaostacolo(){
@@ -54,13 +60,10 @@ document.addEventListener('DOMContentLoaded',() =>{
     }
     generaostacolo();
 
-
-
     function gameover(){
         clearInterval(idTempoGioco)
 
         game_over == true;
         document.removeEventListener("keyup", control)
     }
-
 })
