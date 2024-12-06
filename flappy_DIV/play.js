@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let homeButton = create('a');
         let replay = create('a');
 
-        addClass(buttons, 'gameover-buttons')
+        addClass(buttons, 'gameover-buttons');
         gameOverText.innerText = 'GAME OVER!';
         homeButton.innerText = 'Home';
         homeButton.href = './homepage.html';

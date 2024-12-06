@@ -85,8 +85,6 @@ body{
     position: absolute;
     top: 580px;
     height: 150px;
-    animation: slideright 100s infinite linear;
-    -webkit-animation: slideright 100s infinite linear;
     width: 100%;
     background-color: black;
 }
