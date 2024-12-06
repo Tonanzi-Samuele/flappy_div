@@ -100,10 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
     generaostacolo();
 
     function gameover(timerId) {
+        if(game_over) return;
+
         // blocco di codice che stoppa flappy dal poter volare
         clearInterval(idTempoGioco);
         clearInterval(timerId);
-        game_over == true;
+        game_over = true;
         document.removeEventListener("keyup", control);
         console.log('game over.');
 
