@@ -15,6 +15,7 @@ body{
     position: absolute;
     display: inline-block;
     border: 1px solid black;
+    z-index: -1;
 }
 
 .cielo{
@@ -30,7 +31,7 @@ body{
     background-color: black;
     position: absolute;
     top: 580px;
-    z-index: +1;
+    z-index: +2;
 }
 
 .flappy{
@@ -47,7 +48,9 @@ body{
     background-color: green;
     width: 60px;
     height: 300px;
-    position: absolute; 
+    bottom: 100px;
+    position: absolute;
+    z-index: 0;
 }
 
 .ostacolosopra {
@@ -56,6 +59,7 @@ body{
     width: 60px;
     height: 300px;
     position: absolute;
+    z-index: 0;
 }
 
 @keyframes slideright {
@@ -92,6 +96,7 @@ body{
 
 #gameOver-Text{
     font-style: bold;
+    background-color: white;
 }
 
 .gameover-buttons{
@@ -99,11 +104,13 @@ body{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    background-color: white;
 }
 
 .gameover-buttons > a{
     text-decoration: none;
     color: black;
+    background-color: white;
 }
 
 .gameover-buttons > a:hover{

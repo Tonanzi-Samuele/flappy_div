@@ -1,3 +1,8 @@
+function rand( lowest, highest){
+    var adjustedHigh = (highest - lowest) + 1;       
+    return Math.floor(Math.random()*adjustedHigh) + parseFloat(lowest);
+}
+
 // funzione per rimuovere la classe ad un oggetto
 function removeClass(obj, classe) {
     return obj.classList.remove(classe);
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function salta(){
-        if(birdBot < 500) birdBot += 50;
+        if(birdBot < 500) birdBot += 40;
         bird.style.bottom = birdBot + 'px';
         console.log(birdBot);
     }
@@ -51,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generaostacolo() {
         let ostacoloSx = 500;
-        let height = Math.random() * 60;
+        let height = rand(70, 200);
         let ostacoloBot = height;
         const ostacolo = create("div");
         const ostacolosopra = create("div");
@@ -83,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } if (
                 ostacoloSx > 200 && ostacoloSx < 280 && birdSx === 220 && 
                 (
-                    birdBot < ostacoloBot + 152 || 
+                    birdBot < ostacoloBot + 153 || 
                     birdBot > ostacoloBot + gap - 200
                 ) || birdBot === 0
             ) {
@@ -95,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const timerId = setInterval(muoviostacolo, 20);
         //!game_over ? setTimeout(generaostacolo, 3000)
         if (!game_over)
-            setTimeout(generaostacolo, 2700);
+            setTimeout(generaostacolo, 2070);
     }
     generaostacolo();
 
@@ -129,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gameOverText.id = 'gameOver-Text';
 
+        divGameOver.style.zIndex = +99;
         // displayGioco.style.backgroundColor = 'grey';
         // displayGioco.style.display = 'flex';
         // displayGioco.style.flexFlow = 'row wrap';
