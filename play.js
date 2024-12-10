@@ -3,6 +3,11 @@ function rand( lowest, highest){
     return Math.floor(Math.random()*adjustedHigh) + parseFloat(lowest);
 }
 
+// funzione per ottenere oggetto da ID
+// function getElementById(id) {
+//     return document.getElementById(id);
+// }
+
 // funzione per rimuovere la classe ad un oggetto
 function removeClass(obj, classe) {
     return obj.classList.remove(classe);
@@ -27,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bird = querySelector(".flappy");
     const displayGioco = querySelector(".container");
     const ground = querySelector(".ground-moving");
+    score();
 
     let birdSx = 220;
     let birdBot = 100;
@@ -48,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function salta(){
-        if(birdBot < 500) birdBot += 40;
+        if(birdBot < 500) birdBot += 50;
         bird.style.bottom = birdBot + 'px';
         console.log(birdBot);
     }
@@ -96,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 game_over = true;
                 clearInterval(timerId);
             }
+            if (ostacoloSx == -30 && !game_over) {
+                increaseScore();
+            }
         }
         const timerId = setInterval(muoviostacolo, 20);
         //!game_over ? setTimeout(generaostacolo, 3000)
@@ -103,6 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(generaostacolo, 2070);
     }
     generaostacolo();
+
+    function score(){
+        let score = create('h1');
+        let sky = querySelector('.cielo');
+
+        score.innerText = '0';
+        score.id = 'score';
+        sky.append(score);
+    }
+
+    function increaseScore(){
+        let score = querySelector('#score');
+        score.innerText = +score.innerText + 1;
+    }
 
     function gameover(timerId) {
         if(game_over) return;

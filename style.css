@@ -15,7 +15,7 @@ body{
     position: absolute;
     display: inline-block;
     border: 1px solid black;
-    z-index: -1;
+    z-index: 0;
 }
 
 .cielo{
@@ -31,7 +31,7 @@ body{
     background-color: black;
     position: absolute;
     top: 580px;
-    z-index: +2;
+    z-index: 2;
 }
 
 .flappy{
@@ -50,7 +50,7 @@ body{
     height: 300px;
     bottom: 100px;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
 }
 
 .ostacolosopra {
@@ -59,7 +59,7 @@ body{
     width: 60px;
     height: 300px;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
 }
 
 @keyframes slideright {
@@ -117,4 +117,8 @@ body{
     color: solid black;
     background-color: violet;
     border: 1px solid black;
+}
+
+#score{
+    z-index: 3;
 }
