@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 game_over = true;
                 clearInterval(timerId);
             }
-            if (ostacoloSx == -30 && !game_over) {
+            if (ostacoloSx < 10 && ostacoloSx > -2 && !game_over) {
                 increaseScore();
             }
         }
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //!game_over ? setTimeout(generaostacolo, 3000)
         if (!game_over)
             setTimeout(generaostacolo, 2070);
-    }
+    }   
     generaostacolo();
 
     function score(){
