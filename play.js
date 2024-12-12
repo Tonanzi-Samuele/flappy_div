@@ -126,45 +126,90 @@ document.addEventListener('DOMContentLoaded', () => {
         let score = querySelector('#score');
         score.innerText = +score.innerText + 1;
     }
-
     function gameover(timerId) {
-        if(game_over) return;
-
-        // blocco di codice che stoppa flappy dal poter volare
+        if (game_over) return;
+    
+        // Blocca il movimento
         clearInterval(idTempoGioco);
         clearInterval(timerId);
         game_over = true;
         document.removeEventListener("keyup", control);
-        console.log('game over.');
-
+    
         addClass(ground, 'pavimento');
         removeClass(ground, 'ground-moving');
-
-        // blocco di codice per la schermata di Game Over.
-        let gameOverText = create('h1');
-        let divGameOver = querySelector('.gameover-text');
-        let buttons = create('div');
-        let homeButton = create('a');
-        let replay = create('a');
-
-        addClass(buttons, 'gameover-buttons');
+    
+        // Creazione dell'overlay
+        const overlay = create('div');
+        overlay.classList.add('game-over-overlay');
+    
+        // Testo "Game Over"
+        const gameOverText = create('h1');
         gameOverText.innerText = 'GAME OVER!';
+        
+    
+        // Pulsanti Home e Retry
+        const buttons = create('div');
+        
+    
+        const homeButton = create('a');
         homeButton.innerText = 'Home';
         homeButton.href = './homepage.html';
-
+        
+    
+        const replay = create('a');
         replay.innerText = 'Retry';
         replay.href = './game.html';
-
-        gameOverText.id = 'gameOver-Text';
-
-        divGameOver.style.zIndex = +99;
-        // displayGioco.style.backgroundColor = 'grey';
-        // displayGioco.style.display = 'flex';
-        // displayGioco.style.flexFlow = 'row wrap';
-        // displayGioco.style.justifyContent = 'center';
-        // displayGioco.style.alignItems = 'center';
-
+        
+    
+        // Aggiungi pulsanti al div
         buttons.append(homeButton, replay);
-        divGameOver.after(gameOverText, buttons);
+    
+        // Aggiungi testo e pulsanti all'overlay
+        overlay.append(gameOverText, buttons);
+    
+        // Aggiungi l'overlay al contenitore del gioco
+        const displayGioco = querySelector('.container');
+        displayGioco.style.position = 'relative'; // Per assicurare il posizionamento dell'overlay
+        displayGioco.appendChild(overlay);
     }
+//     function gameover(timerId) {
+//         if(game_over) return;
+
+//         // blocco di codice che stoppa flappy dal poter volare
+//         clearInterval(idTempoGioco);
+//         clearInterval(timerId);
+//         game_over = true;
+//         document.removeEventListener("keyup", control);
+//         console.log('game over.');
+
+//         addClass(ground, 'pavimento');
+//         removeClass(ground, 'ground-moving');
+
+//         // blocco di codice per la schermata di Game Over.
+//         let gameOverText = create('h1');
+//         let divGameOver = querySelector('.gameover-text');
+//         let buttons = create('div');
+//         let homeButton = create('a');
+//         let replay = create('a');
+
+//         addClass(buttons, 'gameover-buttons');
+//         gameOverText.innerText = 'GAME OVER!';
+//         homeButton.innerText = 'Home';
+//         homeButton.href = './homepage.html';
+
+//         replay.innerText = 'Retry';
+//         replay.href = './game.html';
+
+//         gameOverText.id = 'gameOver-Text';
+
+//         divGameOver.style.zIndex = +99;
+//         // displayGioco.style.backgroundColor = 'grey';
+//         // displayGioco.style.display = 'flex';
+//         // displayGioco.style.flexFlow = 'row wrap';
+//         // displayGioco.style.justifyContent = 'center';
+//         // displayGioco.style.alignItems = 'center';
+
+//         buttons.append(homeButton, replay);
+//         divGameOver.after(gameOverText, buttons);
+//     }
 })
