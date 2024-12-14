@@ -137,34 +137,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
         addClass(ground, 'pavimento');
         removeClass(ground, 'ground-moving');
-    
-        // Creazione dell'overlay
         const overlay = create('div');
         overlay.classList.add('game-over-overlay');
-    
-        // Testo "Game Over"
+
         const gameOverText = create('h1');
         gameOverText.innerText = 'GAME OVER!';
         
-    
-        // Pulsanti Home e Retry
         const buttons = create('div');
         
-    
         const homeButton = create('a');
         homeButton.innerText = 'Home';
         homeButton.href = './homepage.html';
         
-    
         const replay = create('a');
         replay.innerText = 'Retry';
         replay.href = './game.html';
-        
     
-        // Aggiungi pulsanti al div
         buttons.append(homeButton, replay);
-    
-        // Aggiungi testo e pulsanti all'overlay
         overlay.append(gameOverText, buttons);
     
         // Aggiungi l'overlay al contenitore del gioco
