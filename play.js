@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keyup', control);
 
     function generaostacolo() {
-        let ostacoloSx = 500;
-        let height = rand(70, 200);
+        let ostacoloSx = 570;
+        let height = rand(40, 150);
         let ostacoloBot = height;
         const ostacolo = create("div");
         const ostacolosopra = create("div");
