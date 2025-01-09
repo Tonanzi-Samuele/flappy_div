@@ -36,7 +36,7 @@ body{
     background-color: black;
     position: absolute;
     top: 580px;
-    z-index: 4;
+    z-index: 5;
 }
 
 .flappy{
@@ -128,7 +128,7 @@ body{
 
 #score{
     color: white;
-    z-index: 5;
+    z-index: 9;
 }
 .game-over-overlay {
     position: absolute;

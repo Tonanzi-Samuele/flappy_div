@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 game_over = true;
                 clearInterval(timerId);
             }
+
             if (ostacoloSx < 10 && ostacoloSx > -2 && !game_over) {
                 increaseScore();
             }
@@ -122,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let score = querySelector('#score');
         score.innerText = +score.innerText + 1;
     }
+
     function gameover(timerId) {
         if (game_over) return;
     
