@@ -18,7 +18,7 @@ body{
     position: absolute;
     display: inline-block;
     border: 1px solid black;
-    z-index: 1;
+    z-index: +1;
     overflow: hidden;
 }
 
@@ -27,7 +27,7 @@ body{
     width: 570px;
     height: 580px;
     position: absolute;
-    z-index: 1;
+    z-index: +1;
 }
 
 .pavimento{
@@ -36,7 +36,7 @@ body{
     background-color: black;
     position: absolute;
     top: 580px;
-    z-index: 5;
+    z-index: +3;
 }
 
 .flappy{
@@ -47,7 +47,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: +3;
 }
 
 .ostacolo{
@@ -56,7 +56,7 @@ body{
     height: 300px;
     bottom: 100px;
     position: absolute;
-    z-index: 2;
+    z-index: +2;
 }
 
 .ostacolosopra {
@@ -65,7 +65,7 @@ body{
     width: 60px;
     height: 300px;
     position: absolute;
-    z-index: 3;
+    z-index: +3;
 }
 
 @keyframes slideright {
@@ -103,7 +103,7 @@ body{
 #gameOver-Text{
     font-style: bold;
     background-color: white;
-    z-index: 99;
+    z-index: +99;
 }
 
 .gameover-buttons{
@@ -128,7 +128,7 @@ body{
 
 #score{
     color: white;
-    z-index: 9;
+    z-index: +9;
 }
 .game-over-overlay {
     position: absolute;
@@ -137,7 +137,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 98;
+    z-index: +98;
     display: flex;
     flex-direction: column;
     justify-content: center;

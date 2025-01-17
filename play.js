@@ -64,11 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const ostacolosopra = create("div");
 
         if (!game_over) {
-            ostacolo.classList.add('ostacolo');
-            ostacolosopra.classList.add('ostacolosopra');
-            addClass(ostacolo, "ostacolo");
-            addClass(ostacolosopra, "ostacolosopra");
+            addClass(ostacolo, 'ostacolo');
+            addClass(ostacolosopra, 'ostacolosopra');
         }
+
+        ostacolo.style.zIndex = '+2';
+        ostacolosopra.style.zIndex = '+3';
 
         displayGioco.appendChild(ostacolo);
         displayGioco.appendChild(ostacolosopra);
